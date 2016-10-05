@@ -1,10 +1,11 @@
 # What's in this boilerplate?
 
-  - Webpack
   - Babel
-  - Redux
-  - React Router
+  - Fetch Polyfill
   - React Redux Bindings
+  - React Router
+  - Redux
+  - Webpack
 
 No backend yet.
 
