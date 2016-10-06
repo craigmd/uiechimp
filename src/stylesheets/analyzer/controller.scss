@@ -1,0 +1,68 @@
+.controller-container {
+  width: 450px;
+}
+
+.below-input {
+  margin-right: 15px;
+}
+
+.controller {
+  background-color: $component-bg;
+  display: flex;
+  height: 100px;
+}
+
+.control {
+  flex: 3;
+}
+
+.control-unsub {
+  flex: 1.75;
+  margin: 13.5px auto;
+
+  h4 {
+    margin-bottom: 10px;
+  }
+}
+
+.control-value-container {
+  margin: auto;
+  text-align: center;
+}
+
+.control-value {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.arrows {
+  background-color: darken($component-bg, 9%);
+  height: 100%;
+  width: 25%;
+
+  hr {
+    border: 0;
+    border-top: 1px solid white;
+    display: block;
+    height: 1px;
+    width: 100%;
+  }
+
+  @include flex(column, space-around, center);
+}
+
+.arrow-up {
+	border-left: 12.5px solid transparent;
+	border-right: 12.5px solid transparent;
+	border-bottom: 25px solid white;
+  height: 0;
+  width: 0;
+}
+
+.arrow-down {
+	border-left: 12.5px solid transparent;
+	border-right: 12.5px solid transparent;
+	border-top: 25px solid white;
+  height: 0;
+  width: 0;
+}

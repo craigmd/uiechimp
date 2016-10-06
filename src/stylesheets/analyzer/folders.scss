@@ -1,0 +1,25 @@
+.folders-container {
+  width: 300px;
+}
+
+.folders {
+  background-color: $component-bg;
+  font-weight: 700;
+  height: 222px;
+  overflow-y: scroll;
+}
+
+.folder {
+  cursor: pointer;
+  height: 20%;
+  line-height: 2.35;
+  overflow: hidden;
+  padding-left: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &.active {
+    background-color: $active-bg;
+    color: white;
+  }
+}

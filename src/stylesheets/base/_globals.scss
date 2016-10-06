@@ -1,0 +1,55 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.375;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-size: 1.33rem;
+  margin-bottom: 15px;
+}
+
+header {
+  background-color: $component-bg;
+  max-height: 75px;
+  margin-bottom: 60px;
+  padding: 12.5px 0;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.row, .flex-between {
+  @include flex(row, space-between, center);
+}
+
+.row {
+  margin-bottom: 60px;
+}
+
+
+.list-creator-btn {
+  background-color: $uie-red;
+  color: white;
+  font-weight: 700;
+  padding: 13px 23.5px;
+}

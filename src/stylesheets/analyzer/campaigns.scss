@@ -1,0 +1,32 @@
+.campaigns-container {
+  width: 600px;
+}
+
+.campaigns {
+  background-color: $component-bg;
+  height: 222px;
+  overflow-y: scroll;
+}
+
+.campaigns-clear-btn {
+  color: $active-bg;
+  cursor: pointer;
+}
+
+.campaign {
+  height: 20%;
+  line-height: 2.35;
+  overflow: hidden;
+  padding-left: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  input[type="checkbox"] {
+    margin-right: 15px;
+  }
+
+  span {
+    font-weight: 700;
+    margin-right: 15px;
+  }
+}

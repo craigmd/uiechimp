@@ -1,21 +1,24 @@
 //Libs
 import React, { PropTypes } from 'react'
-import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
+// import { Provider } from 'react-redux'
 
-//Routes
-import routes from '../routes'
+//Components
+import Layout from './Layout'
+import Analyzer from './analyzer'
 
-const Root = ({ store }) => (
-  <Provider store={store}>
+const Root = () => {
+  return (
     <Router history={browserHistory}>
-      {routes()}
+      <Route component={Layout}>
+        <Route path="/" component={Analyzer} />
+      </Route>
     </Router>
-  </Provider>
-);
+  );
+}
 
-Root.propTypes = {
-  store: PropTypes.object.isRequired
-};
+// Root.propTypes = {
+//   store: PropTypes.object.isRequired
+// };
 
 export default Root;
