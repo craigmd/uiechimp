@@ -13,7 +13,9 @@ const Analyzer = () => (
       <Folders />
       <Campaigns />
     </div>
-    <Controller />
+    <div className="row">
+      <Controller />
+    </div>
     <Emails />
   </div>
 );

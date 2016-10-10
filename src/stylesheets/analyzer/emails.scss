@@ -1,0 +1,63 @@
+.emails-container {
+  background-color: $component-bg;
+}
+
+.legend {
+  background-color: $pop-gray;
+  padding: 10px 15px;
+}
+
+.email-filter {
+  width: 285px;
+}
+
+.legend-action-container {
+  width: 630px;
+}
+
+.legend-action {
+  align-items: center;
+  display: flex;
+}
+
+.action-type {
+  margin-left: 15px;
+}
+
+.action-box {
+  background-color: white;
+  border: 1px solid $action-box-border;
+  height: 41px;
+  width: 26px;
+}
+
+.action-box--open {
+  background-color: $action-open;
+}
+
+.action-box--click {
+  background-color: $action-click;
+}
+
+.action-box--bounce {
+  background-color: black;
+}
+
+.action-box--unsub {
+  background-color: $uie-red;
+}
+
+.email-address {
+  background-color: white;
+  padding-left: 15px;
+  text-align: left;
+  width: 300px;
+}
+
+.campaign-id-vertical {
+  letter-spacing: 7px;
+  line-height: 1.1;
+  text-align: right;
+  width: 26px;
+  word-break: break-all;
+}

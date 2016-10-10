@@ -11,6 +11,7 @@
 .campaigns-clear-btn {
   color: $active-bg;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .campaign {
@@ -25,7 +26,7 @@
     margin-right: 15px;
   }
 
-  span {
+  .campaign-id {
     font-weight: 700;
     margin-right: 15px;
   }
