@@ -1,3 +1,5 @@
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   entry: {
     path: './src/index.js'
@@ -19,8 +21,11 @@ module.exports = {
       }
     ]
   },
-  devtool: 'eval-source-map',
-  devServer: {
-    contentBase: './build'
-  }
+  plugins: [
+    new Dotenv({
+      path: './.env',
+      safe: false
+    })
+  ],
+  devtool: 'eval-source-map'
 }

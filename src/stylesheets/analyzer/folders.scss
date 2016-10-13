@@ -17,9 +17,9 @@
   padding-left: 15px;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
 
-  &.active {
-    background-color: $active-bg;
-    color: white;
-  }
+.folder--active {
+  background-color: $active-bg;
+  color: white;
 }

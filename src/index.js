@@ -9,11 +9,11 @@ import Root from './components/Root'
 import './stylesheets/main.scss'
 
 //store
-// import configureStore from './configureStore'
-//
-// const store = configureStore();
+import configureStore from './configureStore'
+
+const store = configureStore();
 
 render(
-  <Root />,
+  <Root store={store} />,
   document.getElementById('root')
 );

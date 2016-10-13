@@ -1,11 +1,8 @@
-//Libs
 import React from 'react'
-
-//Components
-import Folders from './Folders'
-import Campaigns from './Campaigns'
-import Controller from './Controller'
-import Emails from './Emails'
+import Folders from '../containers/Folders'
+import Campaigns from './analyzer/Campaigns'
+import Controller from './analyzer/Controller'
+import Emails from './analyzer/Emails'
 
 const Analyzer = () => (
   <div className="container">
