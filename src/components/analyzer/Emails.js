@@ -1,8 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import LegendAction from './LegendAction'
+import EmailsTable from './EmailsTable'
 
 class Emails extends React.Component {
   render(){
+
     return (
       <div className="emails-container">
         <div className="legend flex-between">
@@ -15,11 +18,16 @@ class Emails extends React.Component {
             <LegendAction>None</LegendAction>
           </div>
         </div>
-
-
+        <EmailsTable />
       </div>
     );
   }
 }
 
-export default Emails
+const mapStateToProps = state => ({
+  campaigns: state.campaigns
+});
+
+export default connect(
+  mapStateToProps
+)(Emails)

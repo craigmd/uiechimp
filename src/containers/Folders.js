@@ -6,18 +6,23 @@ import { receiveFolders } from '../actions'
 
 class Folders extends React.Component {
   componentDidMount() {
-    fetchAPIData('campaign-folders').then(response => {
-      this.props.receiveFolders(response.folders);
-    });
+    fetchAPIData('campaign-folders').then(response =>
+      this.props.receiveFolders(response.folders)
+    );
   }
 
   render() {
-    const folders = this.props.folders.map(folder =>
-      <Folder
-        key={folder.id}
-        endpoint={folder._links[4].href}
-      >{folder.name}</Folder>
-    );
+    const folders = this.props.folders.map(folder => {
+      let { name, _links: links, id } = folder;
+      return (
+        <Folder
+          key={id}
+          id={id}
+          endpoint={links[4].href}
+          isActive={this.props.activeFolder}
+        >{name}</Folder>
+      );
+    });
 
     return <div className="folders-container">
       <h2>Folders</h2>
@@ -28,8 +33,9 @@ class Folders extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  folders: state.folders
+const mapStateToProps = state => ({
+  folders: state.folders,
+  activeFolder: state.activeFolder
 });
 
 export default connect(

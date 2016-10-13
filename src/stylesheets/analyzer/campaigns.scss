@@ -15,19 +15,31 @@
 }
 
 .campaign {
+  align-items: center;
+  display: flex;
   height: 20%;
-  line-height: 2.35;
   overflow: hidden;
   padding-left: 15px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 
-  input[type="checkbox"] {
-    margin-right: 15px;
-  }
+  label {
+    align-items: center;
+    display: flex;
 
-  .campaign-id {
-    font-weight: 700;
-    margin-right: 15px;
+    .checkbox-container {
+      padding-bottom: 2px;
+    }
+
+    input[type="checkbox"] {
+      font-size: 18px;
+      margin-right: 15px;
+    }
+
+    .campaign-id {
+      font-weight: 700;
+      margin-right: 15px;
+    }
   }
 }

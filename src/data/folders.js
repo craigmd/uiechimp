@@ -2,7 +2,7 @@ export const folders = {
 	"folders": [
 		{
 			"name": "AYCL",
-			"id": "aycl1",
+			"id": "folder1",
 			"count": 122,
 			"_links": [
 				{
@@ -39,8 +39,8 @@ export const folders = {
 			]
 		},
 		{
-			"name": "AYCL",
-			"id": "aycl2",
+			"name": "AYCL2",
+			"id": "folder2",
 			"count": 122,
 			"_links": [
 				{
@@ -70,7 +70,7 @@ export const folders = {
 				},
 				{
 					"rel": "campaigns",
-					"href": "campaign-folders/aycl",
+					"href": "campaign-folders/aycl2",
 					"method": "GET",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Campaigns/Collection.json"
 				}

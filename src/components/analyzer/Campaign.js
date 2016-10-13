@@ -1,11 +1,15 @@
 import React from 'react'
 
-const Campaign = ({ id, children }) => {
+const Campaign = ({ localId, children }) => {
   return (
     <li className="campaign">
-      <input type="checkbox" />
-      <span>{id}</span>
-      {children}
+      <label>
+        <div className="checkbox-container"><input type="checkbox" /></div>
+        <span className="campaign-id">{localId}</span>
+        <span>{children}</span>
+      </label>
     </li>
   );
 }
+
+export default Campaign

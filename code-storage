@@ -33,3 +33,7 @@
     </tr>
   </tbody>
 </table>
+
+fetchAPIData(endpoint).then(response => {
+  dispatch(getFolderCampaigns(response));
+});

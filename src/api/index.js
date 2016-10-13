@@ -11,6 +11,8 @@ export const fetchAPIData = (endpoint) =>
         return data.folders;
       case 'campaign-folders/aycl':
         return data.ayclCampaigns;
+      case 'campaign-folders/aycl2':
+        return data.ayclCampaigns2;
       case 'reports/aycl1/email-activity':
         return data.aycl1;
       case 'reports/aycl2/email-activity':
