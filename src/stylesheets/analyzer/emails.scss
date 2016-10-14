@@ -25,40 +25,61 @@
 }
 
 .action-box {
-  border: 1px solid $action-box-border;
   height: 41px;
   width: 26px;
 }
 
 .action-box--open {
-  background-color: $action-open;
+  @include action-box-mod($action-open);
 }
 
 .action-box--click {
-  background-color: $action-click;
+  @include action-box-mod($action-click);
 }
 
 .action-box--bounce {
-  background-color: black;
+  @include action-box-mod(black);
 }
 
 .action-box--unsub {
-  background-color: $uie-red;
+  @include action-box-mod($uie-red);
 }
 
 .action-box--none {
-  background-color: white;
+  @include action-box-mod(white);
 }
 
-.email-address-col {
-  background-color: white;
-  padding-left: 7px;
+.col-group-headers {
+  border-left: 1px solid $pop-gray;
+  border-right: 1px solid $pop-gray;
+  font-weight: 700;
+  display: flex;
+  line-height: 2.75;
 }
 
-.campaign-id-vertical {
-  letter-spacing: 7px;
-  line-height: 1.1;
-  text-align: right;
-  width: 26px;
-  word-break: break-all;
+.email-address-header {
+  background-color: white;
+  border-right: 1px solid $pop-gray;
+  height: 50px;
+  padding-left: 15px;
+  width: 300px;
+}
+
+.campaigns-header {
+  height: 50px;
+  padding-left: 15px;
+  width: 660px;
+}
+
+.public_fixedDataTableCell_cellContent {
+  padding: 0;
+}
+
+.email-address-cell {
+  background-color: white;
+  padding-left: 15px;
+}
+
+.campaigns-cell {
+  background-color: $component-bg;
 }

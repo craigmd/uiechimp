@@ -4,13 +4,11 @@ import Campaign from '../components/analyzer/Campaign'
 
 class Campaigns extends React.Component {
   render() {
-    let nextCampaignId = 1;
     const campaigns = this.props.campaigns.map(campaign => {
       let { id, settings } = campaign;
       return (
         <Campaign
           key={id}
-          localId={nextCampaignId++}
         >{settings.title}</Campaign>
       );
     });

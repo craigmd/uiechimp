@@ -19,3 +19,8 @@
 		border-left: $size solid transparent;
 	}
 }
+
+@mixin action-box-mod($color) {
+  background-color: $color;
+  border: 1px solid $action-box-border;
+}

@@ -5,7 +5,7 @@ class Controller extends React.Component {
     return (
       <div className="controller-container">
         <div className="flex-between">
-          <h2 className="controller-title">AYCL Content Campaigns</h2>
+          <h2 className="controller-title">Campaigns Filter</h2>
           <div className="filter-direction-container">
             <input className="below-input" type="checkbox" />
             <span>below</span>

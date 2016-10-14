@@ -18,6 +18,10 @@ class Emails extends React.Component {
             <LegendAction>None</LegendAction>
           </div>
         </div>
+        <div className="col-group-headers">
+          <div className="email-address-header">Email Address</div>
+          <div className="campaigns-header">Campaigns</div>
+        </div>
         <EmailsTable />
       </div>
     );
