@@ -1,39 +1,54 @@
-<table>
-  <thead>
-    <tr>
-      <th className="email-address">Email Address</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="id-row">
-      <td className="email-address"></td>
-      <td className="campaign-id-vertical">0001</td>
-      <td className="campaign-id-vertical">0002</td>
-      <td className="campaign-id-vertical">0003</td>
-      <td className="campaign-id-vertical">0004</td>
-      <td className="campaign-id-vertical">0005</td>
-      <td className="campaign-id-vertical">0006</td>
-      <td className="campaign-id-vertical">0007</td>
-      <td className="campaign-id-vertical">0008</td>
-      <td className="campaign-id-vertical">0009</td>
-      <td className="campaign-id-vertical">0010</td>
-    </tr>
-    <tr className="data-row">
-      <td className="email-address">foo.bar@example.com</td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-      <td className="action-box"></td>
-    </tr>
-  </tbody>
-</table>
-
 fetchAPIData(endpoint).then(response => {
   dispatch(getFolderCampaigns(response));
 });
+
+<Column
+  cell={
+    <Cell
+      className="campaigns-cell"
+    >
+      <div className="action-box action-box--none"></div>
+    </Cell>
+  }
+  width={42}
+/>
+<Column
+  cell={
+    <Cell
+      className="campaigns-cell"
+    >
+      <div className="action-box action-box--open"></div>
+    </Cell>
+  }
+  width={27}
+/>
+<Column
+  cell={
+    <Cell
+      className="campaigns-cell"
+    >
+      <div className="action-box action-box--open"></div>
+    </Cell>
+  }
+  width={27}
+/>
+<Column
+  cell={
+    <Cell
+      className="campaigns-cell"
+    >
+      <div className="action-box action-box--open"></div>
+    </Cell>
+  }
+  width={27}
+/>
+<Column
+  cell={
+    <Cell
+      className="campaigns-cell"
+    >
+      <div className="action-box action-box--open"></div>
+    </Cell>
+  }
+  width={27}
+/>

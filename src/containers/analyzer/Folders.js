@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Folder from '../components/analyzer/Folder'
-import { fetchAPIData } from '../api'
-import { receiveFolders } from '../actions'
+import Folder from './Folder'
+import { fetchAPIData } from '../../api'
+import { getFolders } from '../../actions'
 
 class Folders extends React.Component {
   componentDidMount() {
     fetchAPIData('campaign-folders').then(response =>
-      this.props.receiveFolders(response.folders)
+      this.props.getFolders(response.folders)
     );
   }
 
@@ -40,5 +40,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { receiveFolders }
+  { getFolders }
 )(Folders);

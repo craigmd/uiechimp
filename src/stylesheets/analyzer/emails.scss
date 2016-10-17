@@ -71,6 +71,15 @@
   width: 660px;
 }
 
+.public_fixedDataTableRow_main {
+  background-color: $component-bg;
+
+}
+
+.public_fixedDataTableCell_main {
+  border: 0;
+}
+
 .public_fixedDataTableCell_cellContent {
   padding: 0;
 }
@@ -82,4 +91,9 @@
 
 .campaigns-cell {
   background-color: $component-bg;
+
+  .action-box {
+    margin-left: auto;
+    margin-right: 1px;
+  }
 }

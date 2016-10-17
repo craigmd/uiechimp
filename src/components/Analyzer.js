@@ -1,6 +1,6 @@
 import React from 'react'
-import Folders from '../containers/Folders'
-import Campaigns from '../containers/Campaigns'
+import Folders from '../containers/analyzer/Folders'
+import Campaigns from '../containers/analyzer/Campaigns'
 import Controller from './analyzer/Controller'
 import Emails from './analyzer/Emails'
 

@@ -1,7 +1,7 @@
 export const aycl3 = {
 	"emails": [
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "8329f179b3cefb37768213f571b784e3",
 			"email_address": "lai.kassandra@gmail.com",
@@ -34,7 +34,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "89c748b66913207d0fa9d73351328776",
 			"email_address": "natalia.blaszczyk@outsystems.com",
@@ -61,7 +61,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "4ec2bb668f256c6ddc16de06d11c36b0",
 			"email_address": "pedrazzi@gmail.com",
@@ -88,7 +88,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "fb2a0b14cff22f97cae677466e49a8a0",
 			"email_address": "sanita.lustika@gmail.com",
@@ -115,7 +115,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "0aa5d6eeaac8dcc2acfb50f079bcff33",
 			"email_address": "menare@wellsfargo.com",
@@ -142,7 +142,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "5555cfb8e1c89a861609fa48dce26025",
 			"email_address": "vasu@pebbleroad.com",
@@ -175,7 +175,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "823e9c6c74964335b1dc27f64009646b",
 			"email_address": "lim72@yahoo.ca",
@@ -202,7 +202,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "2fbafd4a947f54e2c99ff79ea25e5f57",
 			"email_address": "jessica.fee@fmr.com",
@@ -229,7 +229,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "b11ddf5bc0ce0d1c3faf3f436b9e11be",
 			"email_address": "jbellis@usaid.gov",
@@ -256,7 +256,7 @@ export const aycl3 = {
 			]
 		},
 		{
-			"campaign_id": "b4ea209ce5",
+			"campaign_id": "aycl3",
 			"list_id": "382de78e4c",
 			"email_id": "3c258a4f91ee68e8ff4e05200b01762e",
 			"email_address": "fractal_design@hotmail.com",
@@ -295,18 +295,18 @@ export const aycl3 = {
 			]
 		}
 	],
-	"campaign_id": "b4ea209ce5",
+	"campaign_id": "aycl3",
 	"total_items": 235,
 	"_links": [
 		{
 			"rel": "parent",
-			"href": "https://us5.api.mailchimp.com/3.0/reports/b4ea209ce5",
+			"href": "https://us5.api.mailchimp.com/3.0/reports/aycl3",
 			"method": "GET",
 			"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Reports/Instance.json"
 		},
 		{
 			"rel": "self",
-			"href": "https://us5.api.mailchimp.com/3.0/reports/b4ea209ce5/email-activity",
+			"href": "https://us5.api.mailchimp.com/3.0/reports/aycl3/email-activity",
 			"method": "GET",
 			"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Reports/EmailActivity/Collection.json"
 		}

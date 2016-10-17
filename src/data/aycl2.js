@@ -1,7 +1,7 @@
 export const aycl2 = {
 	"emails": [
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "c5b2d5dd839516cb98b580e9c1bb573d",
 			"email_address": "niklas.jordan@googlemail.com",
@@ -34,7 +34,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "e8db074cb6146a4c2a783899fe2d8929",
 			"email_address": "a_sinakou@acs.org",
@@ -97,7 +97,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "088c4912fd4cb925214e778c947097c8",
 			"email_address": "a_shipley@msn.com",
@@ -124,7 +124,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "6786dd78eb2dab85808a8dc4483559f4",
 			"email_address": "a_knockknock@yahoo.co.uk",
@@ -151,7 +151,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "aa09d288c91e51bb55795c3a3b72b3b0",
 			"email_address": "873yunnu77hhhyhjkk@gmail.com",
@@ -178,7 +178,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "68fba65ff2a098c6ad01fd0e127f626f",
 			"email_address": "72cougar@gmail.com",
@@ -211,7 +211,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "49caa4ff2a10abad91bd5d44882edb2a",
 			"email_address": "5h4rpd0g@gmail.com",
@@ -238,7 +238,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "5216b1419e017bf1fe358eff53398fa7",
 			"email_address": "4dreamer4@gmail.com",
@@ -265,7 +265,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "3086aa46772d9c5083f3524838688a27",
 			"email_address": "2alexzuo@gmail.com",
@@ -292,7 +292,7 @@ export const aycl2 = {
 			]
 		},
 		{
-			"campaign_id": "c13cce2305",
+			"campaign_id": "aycl2",
 			"list_id": "382de78e4c",
 			"email_id": "5be51eb69717033d993417f5b3f17482",
 			"email_address": "26amitsharma@gmail.com",
@@ -319,18 +319,18 @@ export const aycl2 = {
 			]
 		}
 	],
-	"campaign_id": "c13cce2305",
+	"campaign_id": "aycl2",
 	"total_items": 14602,
 	"_links": [
 		{
 			"rel": "parent",
-			"href": "https://us5.api.mailchimp.com/3.0/reports/c13cce2305",
+			"href": "https://us5.api.mailchimp.com/3.0/reports/aycl2",
 			"method": "GET",
 			"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Reports/Instance.json"
 		},
 		{
 			"rel": "self",
-			"href": "https://us5.api.mailchimp.com/3.0/reports/c13cce2305/email-activity",
+			"href": "https://us5.api.mailchimp.com/3.0/reports/aycl2/email-activity",
 			"method": "GET",
 			"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Reports/EmailActivity/Collection.json"
 		}

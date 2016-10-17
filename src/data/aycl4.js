@@ -1,7 +1,7 @@
 export const aycl4 = {
 	"emails": [
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "73c88ac1ef9084fe8d7de6166d14086f",
 			"email_address": "debbie.catherall@snagajob.com",
@@ -28,7 +28,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "944adcbd8078335eef5c90118640386d",
 			"email_address": "ngift@mit.edu",
@@ -61,7 +61,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "b3f71547c7302f3c0395b5258350557e",
 			"email_address": "mollyk@vsp.com",
@@ -88,7 +88,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "f59455bf03e3bd9f81f386328d0f9d52",
 			"email_address": "maggie.vaughan@cnu.edu",
@@ -115,7 +115,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "b7df621301c708a5b50d54ee35abd1a7",
 			"email_address": "laila.jossund@bouvet.no",
@@ -142,7 +142,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "ed0412b38707cb83223559829c7d3044",
 			"email_address": "kristin.l.turner@gmail.com",
@@ -169,7 +169,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "8c038fe54562f1496ede23500f6d510e",
 			"email_address": "jason.butina@asahq.com",
@@ -202,7 +202,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "b893f5e40a012556a9f30cb03e750dc0",
 			"email_address": "hernans@zillow.com",
@@ -235,7 +235,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "6eea2c1f1bdf936e5bad30e109f8cd4c",
 			"email_address": "dacox@acm.org",
@@ -279,7 +279,7 @@ export const aycl4 = {
 			]
 		},
 		{
-			"campaign_id": "c1bb640d2c",
+			"campaign_id": "aycl4",
 			"list_id": "382de78e4c",
 			"email_id": "f3eb46b04604e38b46e08b9391d6a376",
 			"email_address": "cpampino@us.ibm.com",
@@ -306,18 +306,18 @@ export const aycl4 = {
 			]
 		}
 	],
-	"campaign_id": "c1bb640d2c",
+	"campaign_id": "aycl4",
 	"total_items": 280,
 	"_links": [
 		{
 			"rel": "parent",
-			"href": "https://us5.api.mailchimp.com/3.0/reports/c1bb640d2c",
+			"href": "https://us5.api.mailchimp.com/3.0/reports/aycl4",
 			"method": "GET",
 			"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Reports/Instance.json"
 		},
 		{
 			"rel": "self",
-			"href": "https://us5.api.mailchimp.com/3.0/reports/c1bb640d2c/email-activity",
+			"href": "https://us5.api.mailchimp.com/3.0/reports/aycl4/email-activity",
 			"method": "GET",
 			"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/Reports/EmailActivity/Collection.json"
 		}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Campaign from '../components/analyzer/Campaign'
+import Campaign from './Campaign'
 
 class Campaigns extends React.Component {
   render() {
@@ -9,6 +9,7 @@ class Campaigns extends React.Component {
       return (
         <Campaign
           key={id}
+          id={id}
         >{settings.title}</Campaign>
       );
     });
