@@ -13,7 +13,7 @@ fetchAPIData(endpoint).then(response => {
   width={42}
 />
 
-onst uniqueActivity = activities => {
+const uniqueActivity = activities => {
   const actions = activities.map(activity => activity.action);
   return [...new Set(actions)];
 };
@@ -24,3 +24,10 @@ const transformEmailActivity = emails => {
     return {...rest, activity: uniqueActivity(activity)}
   });
 }
+
+let byEmail = {};
+const allCampaignEmails = emailActivity.allIds
+  .map(id => emailActivity.byId[id])
+  .reduce((prev, cur) => {
+    return prev.concat(cur);
+  }, []);

@@ -3,12 +3,6 @@ import { connect } from 'react-redux'
 import { Table, ColumnGroup, Column, Cell } from 'fixed-data-table-2'
 
 const EmailsTable = ({ emailActivity }) => {
-  let byEmail = {};
-  const allCampaignEmails = emailActivity.allIds
-    .map(id => emailActivity.byId[id])
-    .reduce((prev, cur) => {
-      return prev.concat(cur);
-    }, []);
 
   return (
     <Table
@@ -21,7 +15,7 @@ const EmailsTable = ({ emailActivity }) => {
         <Column
           cell={({ rowIndex }) => (
             <Cell className="email-address-cell"
-              >{console.log(allCampaignEmails)}</Cell>
+              >"foo.billy@bar.com"</Cell>
           )}
           fixed={true}
           width={300}

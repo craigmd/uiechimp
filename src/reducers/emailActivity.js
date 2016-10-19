@@ -3,11 +3,16 @@ import { combineReducers } from 'redux';
 const byId = (state={}, action) => {
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
-      return {...state, [action.id]: action.response}
+      let newState = {...state};
+      console.log('state: ', state);
+      for (const email in action.response) {
+        if (newState.hasOwnProperty(email)) {
+          Object.assign(newState[email], action.response[email]);
+        }
+      }
+
+      return Object.assign(action.response, newState);
     case 'DELETE_CAMPAIGN_EMAIL_ACTIVITY':
-      let newState = state;
-      delete newState[action.id];
-      return newState;
     default:
       return state;
   }
@@ -16,11 +21,7 @@ const byId = (state={}, action) => {
 const allIds = (state=[], action) => {
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
-      return [...state, action.id]
     case 'DELETE_CAMPAIGN_EMAIL_ACTIVITY':
-      let newState = state;
-      newState.splice(newState.indexOf(action.id), 1);
-      return newState;
     default:
       return state;
   }
