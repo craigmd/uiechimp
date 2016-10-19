@@ -12,43 +12,15 @@ fetchAPIData(endpoint).then(response => {
   }
   width={42}
 />
-<Column
-  cell={
-    <Cell
-      className="campaigns-cell"
-    >
-      <div className="action-box action-box--open"></div>
-    </Cell>
-  }
-  width={27}
-/>
-<Column
-  cell={
-    <Cell
-      className="campaigns-cell"
-    >
-      <div className="action-box action-box--open"></div>
-    </Cell>
-  }
-  width={27}
-/>
-<Column
-  cell={
-    <Cell
-      className="campaigns-cell"
-    >
-      <div className="action-box action-box--open"></div>
-    </Cell>
-  }
-  width={27}
-/>
-<Column
-  cell={
-    <Cell
-      className="campaigns-cell"
-    >
-      <div className="action-box action-box--open"></div>
-    </Cell>
-  }
-  width={27}
-/>
+
+onst uniqueActivity = activities => {
+  const actions = activities.map(activity => activity.action);
+  return [...new Set(actions)];
+};
+
+const transformEmailActivity = emails => {
+  return emails.map(email => {
+    const { activity, ...rest } = email;
+    return {...rest, activity: uniqueActivity(activity)}
+  });
+}

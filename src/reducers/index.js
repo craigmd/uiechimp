@@ -2,13 +2,13 @@ import { combineReducers } from 'redux'
 import folders from './folders'
 import activeFolder from './activeFolder'
 import campaigns from './campaigns'
-import reports from './reports'
+import emailActivity from './emailActivity'
 
 const app = combineReducers({
   folders,
   activeFolder,
   campaigns,
-  reports
+  emailActivity
 });
 
 export default app;

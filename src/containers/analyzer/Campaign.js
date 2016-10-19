@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAPIData } from '../../api'
-import { getCampaignReport, deleteCampaignReport } from '../../actions'
+import { getCampaignEmailActivity, deleteCampaignReport } from '../../actions'
 
 const Campaign = ({ id, dispatch, children }) => {
-  let endpoint = 'reports/' + id + '/email-activity';
+  const endpoint = 'reports/' + id + '/email-activity';
+
   return (
     <li className="campaign">
       <label>
@@ -13,9 +14,9 @@ const Campaign = ({ id, dispatch, children }) => {
             type="checkbox"
             onChange={(e) => {
               if (e.target.checked) {
-                fetchAPIData(endpoint).then(response =>
-                  dispatch(getCampaignReport(response.emails, id))
-                );
+                fetchAPIData(endpoint).then(response => {
+                  dispatch(getCampaignEmailActivity(response.emails, id));
+                });
               } else {
                 dispatch(deleteCampaignReport(id));
               }
