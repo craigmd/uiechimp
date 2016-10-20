@@ -1,31 +1,54 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Table, ColumnGroup, Column, Cell } from 'fixed-data-table-2'
+import CampaignCell from '../../components/analyzer/CampaignCell'
 
-const EmailsTable = ({ emailActivity }) => {
+const EmailsTable = ({ emailActivity, activeCampaigns }) => {
+  const emails = Object.entries(emailActivity);
 
   return (
     <Table
-      rowsCount={1}
-      rowHeight={50}
+      rowsCount={emails.length}
+      rowHeight={51}
       width={960}
       headerHeight={0}
-      maxHeight={650}
+      maxHeight={600}
       >
         <Column
           cell={({ rowIndex }) => (
             <Cell className="email-address-cell"
-              >"foo.billy@bar.com"</Cell>
+              >{emails[rowIndex][0]}</Cell>
           )}
           fixed={true}
           width={300}
         />
+
+      {activeCampaigns.map((campaign, index) => {
+        if (index === 0) {
+          return (
+            <Column
+              key={campaign}
+              cell={<CampaignCell data={emails} col={campaign} first={true} />}
+              width={42}
+            />
+          );
+        }
+
+        return (
+          <Column
+            key={campaign}
+            cell={<CampaignCell data={emails} col={campaign} first={false} />}
+            width={27}
+          />
+        );
+      })}
     </Table>
   );
 }
 
 const mapStateToProps = state => ({
-  emailActivity: state.emailActivity
+  emailActivity: state.emailActivity,
+  activeCampaigns: state.activeCampaigns
 });
 
 export default connect(

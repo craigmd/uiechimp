@@ -66,14 +66,17 @@
 }
 
 .campaigns-header {
-  height: 50px;
+  height: 51px;
   padding-left: 15px;
   width: 660px;
 }
 
-.public_fixedDataTableRow_main {
+.public_fixedDataTableRow_main,
+.public_fixedDataTableCell_main,
+.public_fixedDataTableRow_highlighted,
+.public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main
+ {
   background-color: $component-bg;
-
 }
 
 .public_fixedDataTableCell_main {
@@ -86,16 +89,20 @@
 
 .email-address-cell {
   background-color: white;
-  height: 50px;
+  height: 51px;
   padding-left: 15px;
   width: 300px;
 }
 
-.campaigns-cell {
+.campaign-cell {
   background-color: $component-bg;
+  padding-right: 1px;
 
-  .action-box {
-    margin-left: auto;
-    margin-right: 1px;
+  .first-col {
+    margin-left: 15px;
+  }
+
+  .action-box, .first-col {
+    margin-top: 5px;
   }
 }

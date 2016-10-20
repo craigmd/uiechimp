@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAPIData } from '../../api'
 import { getCampaignEmailActivity, deleteCampaignReport } from '../../actions'
-import transformEmailActivity from './helpers/transformAPIData'
+import DataTransformer from '../../helpers/dataTransformer'
 
 const Campaign = ({ id, dispatch, children }) => {
   const endpoint = 'reports/' + id + '/email-activity';
@@ -16,10 +16,12 @@ const Campaign = ({ id, dispatch, children }) => {
             onChange={(e) => {
               if (e.target.checked) {
                 fetchAPIData(endpoint)
-                  .then(response =>
-                    transformEmailActivity(response.emails, id))
+                  .then(response => {
+                    let transform = new DataTransformer(response.emails);
+                    return transform.emailActivityRawToStore();
+                  })
                   .then(transformedResponse =>
-                    dispatch(getCampaignEmailActivity(transformedResponse)))
+                    dispatch(getCampaignEmailActivity(transformedResponse, id)))
                   .catch(error => console.error("error: ", error.message));
               } else {
                 dispatch(deleteCampaignReport(id));
