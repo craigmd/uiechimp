@@ -2,15 +2,19 @@ import { combineReducers } from 'redux'
 import folders from './folders'
 import activeFolder from './activeFolder'
 import campaigns from './campaigns'
-import emailActivity from './emailActivity'
+import emailActivity , * as fromEmailActivity from './emailActivity'
 import activeCampaigns from './activeCampaigns'
+import filter from './filter'
 
-const app = combineReducers({
+
+export default combineReducers({
   folders,
   activeFolder,
   campaigns,
   emailActivity,
-  activeCampaigns
+  activeCampaigns,
+  filter
 });
 
-export default app;
+export const getVisibleEmails = (state, filter) =>
+  fromEmailActivity.getVisibleEmails(state, filter);

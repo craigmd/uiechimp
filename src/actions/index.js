@@ -19,7 +19,14 @@ export const getCampaignEmailActivity = (response, id) => ({
   id
 });
 
-export const deleteCampaignReport = (id) => ({
-  type: 'DELETE_CAMPAIGN_EMAIL_ACTIVITY',
+export const deleteActiveCampaign = (id) => ({
+  type: 'DELETE_ACTIVE_CAMPAIGN',
   id
+});
+
+export const updateFilterValue = (name, updateValue, direction) => ({
+  type: 'UPDATE_FILTER_VALUE',
+  name,
+  updateValue,
+  direction
 });

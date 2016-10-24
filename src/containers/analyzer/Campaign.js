@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchAPIData } from '../../api'
-import { getCampaignEmailActivity, deleteCampaignReport } from '../../actions'
-import DataTransformer from '../../helpers/dataTransformer'
+import { getCampaignEmailActivity, deleteActiveCampaign } from '../../actions'
+import fetcher from '../../helpers/fetcher'
+import { emailActivityRawToStore } from '../../helpers/dataTransformers'
+
 
 const Campaign = ({ id, dispatch, children }) => {
   const endpoint = 'reports/' + id + '/email-activity';
@@ -15,16 +16,11 @@ const Campaign = ({ id, dispatch, children }) => {
             type="checkbox"
             onChange={(e) => {
               if (e.target.checked) {
-                fetchAPIData(endpoint)
-                  .then(response => {
-                    let transform = new DataTransformer(response.emails);
-                    return transform.emailActivityRawToStore();
-                  })
-                  .then(transformedResponse =>
-                    dispatch(getCampaignEmailActivity(transformedResponse, id)))
-                  .catch(error => console.error("error: ", error.message));
+                fetcher(endpoint, emailActivityRawToStore).then(response =>
+                  dispatch(getCampaignEmailActivity(response, id))
+                )
               } else {
-                dispatch(deleteCampaignReport(id));
+                dispatch(deleteActiveCampaign(id));
               }
             }}
           />

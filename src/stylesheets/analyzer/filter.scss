@@ -1,4 +1,4 @@
-.controller-container {
+.filter {
   width: 450px;
 }
 
@@ -6,7 +6,7 @@
   margin-bottom: 15px;
 }
 
-.controller-title {
+.filter-title {
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -17,7 +17,7 @@
   margin-right: 15px;
 }
 
-.controller {
+.controllers {
   background-color: $component-bg;
   display: flex;
   height: 100px;
@@ -63,11 +63,13 @@
 }
 
 .arrow-up {
+  cursor: pointer;
   margin-top: 5px;
   @include triangle('up', 12.5px, white);
 }
 
 .arrow-down {
+  cursor: pointer;
   margin-bottom: 5px;
 	@include triangle('down', 12.5px, white);
 }

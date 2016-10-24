@@ -1,11 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Table, ColumnGroup, Column, Cell } from 'fixed-data-table-2'
-import CampaignCell from '../../components/analyzer/CampaignCell'
+import { Table, Column, Cell } from 'fixed-data-table-2'
+import CampaignCell from './CampaignCell'
 
-const EmailsTable = ({ emailActivity, activeCampaigns }) => {
-  const emails = Object.entries(emailActivity);
-
+const EmailsTable = ({ emails, activeCampaigns }) => {
   return (
     <Table
       rowsCount={emails.length}
@@ -46,11 +43,4 @@ const EmailsTable = ({ emailActivity, activeCampaigns }) => {
   );
 }
 
-const mapStateToProps = state => ({
-  emailActivity: state.emailActivity,
-  activeCampaigns: state.activeCampaigns
-});
-
-export default connect(
-  mapStateToProps
-)(EmailsTable)
+export default EmailsTable

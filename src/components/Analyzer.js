@@ -1,8 +1,8 @@
 import React from 'react'
 import Folders from '../containers/analyzer/Folders'
 import Campaigns from '../containers/analyzer/Campaigns'
-import Controller from './analyzer/Controller'
-import Emails from './analyzer/Emails'
+import Filter from '../containers/analyzer/Filter'
+import Emails from '../containers/analyzer/Emails'
 
 
 const Analyzer = () => (
@@ -12,7 +12,7 @@ const Analyzer = () => (
       <Campaigns />
     </div>
     <div className="row">
-      <Controller />
+      <Filter />
     </div>
     <div className="row">
       <Emails />

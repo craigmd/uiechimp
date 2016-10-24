@@ -19,27 +19,13 @@ render(
 );
 
 // let state = {
-//   foo: {aycl1: [1,2,3]},
+//   foo: {aycl1: [1,2,3], aycl2: [4,5,6]},
 //   bar: {aycl1: [4,5,6]}
 // }
 //
-// let incoming = {
-//   foo: {aycl2: [1,2,3]},
-//   baz: {aycl2: [4,5,6]}
-// }
-//
-// console.log('state before: ', state);
-//
-// const combineStructures = (a, b) => {
-//   let newA = {...a};
-//   for (const entry in b) {
-//     if (newA.hasOwnProperty(entry)) {
-//       Object.assign(newA[entry], b[entry]);
-//     }
+// for (const prop in state) {
+//   if (prop === "foo") {
+//     delete state[prop]["aycl2"];
 //   }
-//   Object.assign(b, newA);
-//   console.log('b: ', b);
-//   return b;
+//   console.log("state after: ", state);
 // }
-//
-// combineStructures(state, incoming);
