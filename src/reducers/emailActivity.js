@@ -1,10 +1,10 @@
 const emailActivity = (state={}, action) => {
   let newState = {...state};
+  let response = action.response;
   const id = action.id;
 
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
-      const response = action.response;
 
       for (const email in response) {
         const { opened, clicked } = response[email];
