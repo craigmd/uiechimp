@@ -1,9 +1,10 @@
 const emailActivity = (state={}, action) => {
   let newState = {...state};
+  const id = action.id;
 
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
-      const { response, id } = action;
+      const response = action.response;
 
       for (const email in response) {
         const { opened, clicked } = response[email];
@@ -22,10 +23,18 @@ const emailActivity = (state={}, action) => {
       return Object.assign(action.response, newState);
     case 'DELETE_ACTIVE_CAMPAIGN':
       for (const email in newState) {
-        if (newState[email].hasOwnProperty(action.id)) {
-          delete newState[email][action.id];
+        if (newState[email].hasOwnProperty(id)) {
+          if (newState[email][id].includes("open")) {
+            newState[email].opened--;
+          }
 
-          if (Object.keys(newState[email]).length === 0) {
+          if (newState[email][id].includes("click")) {
+            newState[email].clicked--;
+          }
+
+          delete newState[email][id];
+
+          if (Object.keys(newState[email]).length <= 2) {
             delete newState[email];
           }
         }
