@@ -1,13 +1,15 @@
-const Dotenv = require('dotenv-webpack');
+'user-strict'
 
-module.exports = {
-  entry: {
-    path: './src/index.js'
-  },
-  output: {
-    path: './build',
-    filename: 'bundle.js'
-  },
+var Webpack = require('webpack');
+var path = require('path');
+var Dotenv = require('dotenv-webpack');
+var mainPath = path.resolve(__dirname, 'src', 'index.js');
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+var buildPath = path.resolve(__dirname, 'dist');
+
+process.env
+
+var config = {
   module: {
     loaders: [
       {

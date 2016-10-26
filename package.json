@@ -4,6 +4,7 @@
   "description": "",
   "main": "./build/bundle.js",
   "scripts": {
+    "build": "NODE_ENV=production webpack -p --progress --config ./webpack.production.config.js",
     "start": "webpack-dev-server --content-base ./build --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
