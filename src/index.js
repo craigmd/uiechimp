@@ -1,6 +1,7 @@
 //Libs
 import React from 'react'
 import { render } from 'react-dom'
+import 'babel-polyfill'
 
 //Components
 import Root from './components/Root'

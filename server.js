@@ -4,7 +4,8 @@ let fetch = require('node-fetch');
 
 let app = express();
 let url;
-const auth = "Basic " + new Buffer("apikey:" + process.env.MAILCHIMP_KEY).toString("base64");
+const auth = "Basic " + new Buffer("apikey:" + process.env.MAILCHIMP_KEY)
+  .toString("base64");
 const myInit = {
   method: 'GET',
   headers: {
@@ -27,9 +28,9 @@ app.get('/', (req, res) => {
 
 //mailchimp fetchers
 app.get('/api', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   url = req.query.url;
-
   fetcher(url, myInit, res);
 });
 
-app.listen(3000, () => console.log('The proxy is listening on port 3000'));
+app.listen(3000, () => console.log('The server is listening on port 3000'));

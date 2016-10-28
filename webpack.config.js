@@ -1,15 +1,14 @@
 'user-strict'
 
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
-var Dotenv = require('dotenv-webpack');
-var mainPath = path.resolve(__dirname, 'src', 'index.js');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'dist');
 
-process.env
+var env = process.env.NODE_ENV;
 
 var config = {
+  entry: {
+    path: path.resolve(__dirname, 'src', 'index.js')
+  },
   module: {
     loaders: [
       {
@@ -18,16 +17,30 @@ var config = {
       },
       {
         test: /\.js$/,
-        exclude: 'node_modules',
+        exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'babel-loader'
       }
     ]
   },
   plugins: [
-    new Dotenv({
-      path: './.env',
-      safe: false
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(env)
     })
-  ],
-  devtool: 'eval-source-map'
+  ]
+};
+
+if (env === 'development') {
+  config.devtool = 'eval-source-map';
+  config.output = {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'bundle.js'
+  }
+} else if (env === 'production') {
+  config.devtool = 'cheap-source-map'
+  config.output = {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  }
 }
+
+module.exports = config

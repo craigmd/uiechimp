@@ -1,33 +1,24 @@
-fetchAPIData(endpoint).then(response => {
-  dispatch(getFolderCampaigns(response));
-});
-
-<Column
-  cell={
-    <Cell
-      className="campaigns-cell"
-    >
-      <div className="action-box action-box--none"></div>
-    </Cell>
-  }
-  width={42}
-/>
-
-const uniqueActivity = activities => {
-  const actions = activities.map(activity => activity.action);
-  return [...new Set(actions)];
-};
-
-const transformEmailActivity = emails => {
-  return emails.map(email => {
-    const { activity, ...rest } = email;
-    return {...rest, activity: uniqueActivity(activity)}
-  });
+function* countUp(start = 0) {
+            while (start < 5) {
+                start++;
+                console.log(start);
+                yield;
+            }
+        }
+function* displayCounter(counter) {
+    console.log(counter);
+    yield; // pause
 }
 
-let byEmail = {};
-const allCampaignEmails = emailActivity.allIds
-  .map(id => emailActivity.byId[id])
-  .reduce((prev, cur) => {
-    return prev.concat(cur);
-  }, []);
+function run(generatorObject) {
+    if (!generatorObject.next().done) {
+        // Add a new task to the event queue
+        setTimeout(function () {
+            run(generatorObject);
+        }, 1000);
+    }
+}
+
+function run(generatorObject) {
+
+}

@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import Campaign from './Campaign'
 
 const Campaigns  = ({ campaigns }) => {
-  const campaignsList = campaigns.map(campaign => {
-    let { id, settings } = campaign;
+  const campaignList = campaigns.map(campaign => {
+    let { id, settings, emails_sent: emailsSent } = campaign;
     return (
       <Campaign
         key={id}
         id={id}
+        emailsSent={emailsSent}
       >{settings.title}</Campaign>
     );
   });
@@ -20,7 +21,7 @@ const Campaigns  = ({ campaigns }) => {
         <span className="campaigns-clear-btn">clear</span>
       </div>
       <ul className="campaigns">
-        {campaignsList}
+        {campaignList}
       </ul>
     </div>
   );

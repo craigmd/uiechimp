@@ -8,7 +8,9 @@ const Emails = ({ emailActivity, activeCampaigns }) => {
   return (
     <div className="emails-container">
       <div className="legend flex-between">
-        <h4 className="email-filter">Emails: <span className="emails-count">15,143</span></h4>
+        <h4 className="email-filter">
+          Emails: <span className="emails-count">{emailActivity.length}</span>
+        </h4>
         <div className="legend-action-container flex-between">
           <LegendAction>Open</LegendAction>
           <LegendAction>Click</LegendAction>

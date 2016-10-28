@@ -5,8 +5,13 @@ import fetcher from '../../helpers/fetcher'
 import { emailActivityRawToStore } from '../../helpers/dataTransformers'
 
 
-const Campaign = ({ id, dispatch, children }) => {
-  const endpoint = 'reports/' + id + '/email-activity';
+const Campaign = ({ id, dispatch, children, emailsSent }) => {
+  let url;
+  const count = 1000;
+  const setURL = offset => { return encodeURIComponent(
+    `https://us5.api.mailchimp.com/3.0/reports/${id}/email-activity?offset=${offset}&count=${count}`
+  )};
+  const myInit = { method: 'GET' };
 
   return (
     <li className="campaign">
@@ -16,9 +21,27 @@ const Campaign = ({ id, dispatch, children }) => {
             type="checkbox"
             onChange={(e) => {
               if (e.target.checked) {
-                fetcher(endpoint, emailActivityRawToStore).then(response =>
-                  dispatch(getCampaignEmailActivity(response, id))
-                )
+                function* increaseOffset(offset = 0) {
+                  while (offset < emailsSent) {
+                    url = setURL(offset);
+                    fetcher(`http://localhost:3000/api?url=${url}`,
+                      myInit,
+                      emailActivityRawToStore
+                    ).then(body => {
+                      dispatch(getCampaignEmailActivity(body, id))}
+                    );
+                    offset = offset + count;
+                    yield;
+                  }
+                }
+
+                function runFetch(genObj) {
+                  if (!genObj.next().done) {
+                    setTimeout(() => runFetch(genObj), 500);
+                  }
+                }
+
+                runFetch(increaseOffset());
               } else {
                 dispatch(deleteActiveCampaign(id));
               }

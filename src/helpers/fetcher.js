@@ -1,12 +1,14 @@
-import { fetchAPIData } from '../api'
+import 'whatwg-fetch'
 
-const fetcher = (endpoint, transformer = null) => {
+const fetcher = (endpoint, settings, transformer = null) => {
   return (
-    fetchAPIData(endpoint).then(response => {
-      if (transformer) {
-        return transformer(response);
-      }
-      return response;
+    fetch(endpoint, settings)
+      .then(response => response.json())
+      .then(body => {
+        if (transformer) {
+          return transformer(body);
+        }
+        return body;
     })
   );
 }
