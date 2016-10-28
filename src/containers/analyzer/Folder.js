@@ -5,7 +5,7 @@ import { getFolderCampaigns, setActiveFolder } from '../../actions'
 
 const Folder = ({ isActive, dispatch, id, endpoint, children }) => {
   let classes = 'folder';
-  const url = encodeURIComponent(endpoint + '&count=300');
+  const url = encodeURIComponent(endpoint + '&count=999');
   const myInit = { method: 'GET' };
 
   if (isActive == id) {

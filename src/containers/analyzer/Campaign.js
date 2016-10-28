@@ -5,9 +5,8 @@ import fetcher from '../../helpers/fetcher'
 import { emailActivityRawToStore } from '../../helpers/dataTransformers'
 
 
-const Campaign = ({ id, dispatch, children, emailsSent }) => {
+const Campaign = ({ id, dispatch, children, emailsSent, count }) => {
   let url;
-  const count = 1000;
   const setURL = offset => { return encodeURIComponent(
     `https://us5.api.mailchimp.com/3.0/reports/${id}/email-activity?offset=${offset}&count=${count}`
   )};

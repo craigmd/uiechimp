@@ -7,6 +7,7 @@ export const emailActivityRawToStore = response => {
 
   return emails.map(email => {
     const actions = uniqueActions(email.activity);
+    
     return ({
       [email["email_address"]]: {
         [email["campaign_id"]]: actions,

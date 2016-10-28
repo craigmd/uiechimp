@@ -10,6 +10,7 @@ const Campaigns  = ({ campaigns }) => {
         key={id}
         id={id}
         emailsSent={emailsSent}
+        count={1000}
       >{settings.title}</Campaign>
     );
   });

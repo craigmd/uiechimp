@@ -32,14 +32,14 @@ const emailActivity = (state={}, action) => {
           }
 
           delete newState[email][id];
-
+          //currently 'clicked' and 'opened' are the only two non-id props, that is where '2' comes from
           if (Object.keys(newState[email]).length <= 2) {
             delete newState[email];
           }
         }
       }
 
-      return state;
+      return newState;
     default:
       return state;
   }
