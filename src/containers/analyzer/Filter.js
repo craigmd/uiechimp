@@ -29,7 +29,16 @@ const Filter = ({ filter, updateFilterValue }) => {
         <div className="control-unsub">
           <div className="control-value-container">
             <h4>Unsub</h4>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                if (e.target.checked) {
+                  updateFilterValue("unsubed", 1, "up");
+                } else {
+                  updateFilterValue("unsubed", 1, "down");
+                }
+              }}
+            />
           </div>
         </div>
       </div>

@@ -2,13 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getCampaignEmailActivity, deleteActiveCampaign } from '../../actions'
 import fetcher from '../../helpers/fetcher'
-import { emailActivityRawToStore } from '../../helpers/dataTransformers'
+import { emailActivityRawToStore, emailUnsubRawToStore } from '../../helpers/dataTransformers'
 
 
 const Campaign = ({ id, dispatch, children, emailsSent, count }) => {
-  let url;
-  const setURL = offset => { return encodeURIComponent(
-    `https://us5.api.mailchimp.com/3.0/reports/${id}/email-activity?offset=${offset}&count=${count}`
+  let activityURL;
+  let unsubURL;
+  const setURL = (offset, subresource) => { return encodeURIComponent(
+    `https://us5.api.mailchimp.com/3.0/reports/${id}/${subresource}?offset=${offset}&count=${count}`
   )};
   const myInit = { method: 'GET' };
 
@@ -20,15 +21,20 @@ const Campaign = ({ id, dispatch, children, emailsSent, count }) => {
             type="checkbox"
             onChange={(e) => {
               if (e.target.checked) {
+                unsubURL = setURL(0, 'unsubscribed');
+
+                fetcher(`http://localhost:3000/api?url=${unsubURL}`,
+                  myInit,
+                  emailUnsubRawToStore
+                ).then(body => dispatch(getCampaignEmailActivity(body, id)));
+
                 function* increaseOffset(offset = 0) {
                   while (offset < emailsSent) {
-                    url = setURL(offset);
-                    fetcher(`http://localhost:3000/api?url=${url}`,
+                    activityURL = setURL(offset, 'email-activity');
+                    fetcher(`http://localhost:3000/api?url=${activityURL}`,
                       myInit,
                       emailActivityRawToStore
-                    ).then(body => {
-                      dispatch(getCampaignEmailActivity(body, id))}
-                    );
+                    ).then(body => dispatch(getCampaignEmailActivity(body, id)));
                     offset = offset + count;
                     yield;
                   }

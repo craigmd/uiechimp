@@ -1,3 +1,5 @@
+import isEqual from 'lodash/isEqual'
+
 const emailActivity = (state={}, action) => {
   let newState = {...state};
   let response = action.response;
@@ -6,14 +8,19 @@ const emailActivity = (state={}, action) => {
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
       for (const email in response) {
-        const { opened, clicked } = response[email];
-
         if (newState.hasOwnProperty(email)) {
+          if (isEqual(newState[email], response[email])) { //duplicates
+            continue;
+          }
+
           Object.assign(
             newState[email], {
-              [id]: response[email][id],
-              opened: newState[email].opened + opened,
-              clicked: newState[email].clicked + clicked
+              [id]: newState[email][id] ?
+                newState[email][id].concat(response[email][id]) :
+                response[email][id],
+              opened: newState[email].opened + response[email].opened,
+              clicked: newState[email].clicked + response[email].clicked,
+              unsubed: newState[email].unsubed + response[email].unsubed
             }
           );
         }
@@ -31,9 +38,14 @@ const emailActivity = (state={}, action) => {
             newState[email].clicked--;
           }
 
+          if (newState[email][id].includes("unsub")) {
+            newState[email].unsubed--;
+          }
+
           delete newState[email][id];
-          //currently 'clicked' and 'opened' are the only two non-id props, that is where '2' comes from
-          if (Object.keys(newState[email]).length <= 2) {
+          //currently 'clicked','opened', and 'unsubed' are the only three
+          //non-campaignId props, that is where '3' comes from
+          if (Object.keys(newState[email]).length <= 3) {
             delete newState[email];
           }
         }
@@ -45,11 +57,13 @@ const emailActivity = (state={}, action) => {
   }
 }
 
+export default emailActivity
+
 export const getVisibleEmails = (state, filter) => {
   const emails = Object.entries(state);
 
   return emails.filter(email =>
-    email[1].opened >= filter.opened && email[1].clicked >= filter.clicked);
+    email[1].opened >= filter.opened &&
+    email[1].clicked >= filter.clicked &&
+    email[1].unsubed >= filter.unsubed);
 }
-
-export default emailActivity
