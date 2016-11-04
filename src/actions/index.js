@@ -30,3 +30,7 @@ export const updateFilterValue = (name, updateValue, direction) => ({
   updateValue,
   direction
 });
+
+export const updateFilterOrientation= () => ({
+  type: 'UPDATE_FILTER_ORIENTATION'
+});

@@ -62,6 +62,13 @@ export default emailActivity
 export const getVisibleEmails = (state, filter) => {
   const emails = Object.entries(state);
 
+  if (filter.below) {
+    return emails.filter(email =>
+      email[1].opened < filter.opened &&
+      email[1].clicked < filter.clicked &&
+      email[1].unsubed >= filter.unsubed);
+  }
+
   return emails.filter(email =>
     email[1].opened >= filter.opened &&
     email[1].clicked >= filter.clicked &&
