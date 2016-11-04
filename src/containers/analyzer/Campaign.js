@@ -5,7 +5,7 @@ import fetcher from '../../helpers/fetcher'
 import { emailActivityRawToStore, emailUnsubRawToStore } from '../../helpers/dataTransformers'
 
 
-const Campaign = ({ id, dispatch, children, emailsSent, count }) => {
+const Campaign = ({ id, dispatch, children, emailsSent, sentAt, count }) => {
   let activityURL;
   let unsubURL;
   const setURL = (offset, subresource) => { return encodeURIComponent(
@@ -26,7 +26,9 @@ const Campaign = ({ id, dispatch, children, emailsSent, count }) => {
                 fetcher(`http://localhost:3000/api?url=${unsubURL}`,
                   myInit,
                   emailUnsubRawToStore
-                ).then(body => dispatch(getCampaignEmailActivity(body, id)));
+                ).then(body => dispatch(
+                  getCampaignEmailActivity(body, id, sentAt, children)
+                ));
 
                 function* increaseOffset(offset = 0) {
                   while (offset < emailsSent) {
@@ -34,7 +36,9 @@ const Campaign = ({ id, dispatch, children, emailsSent, count }) => {
                     fetcher(`http://localhost:3000/api?url=${activityURL}`,
                       myInit,
                       emailActivityRawToStore
-                    ).then(body => dispatch(getCampaignEmailActivity(body, id)));
+                    ).then(body => dispatch(
+                      getCampaignEmailActivity(body, id, sentAt, children)
+                    ));
                     offset = offset + count;
                     yield;
                   }

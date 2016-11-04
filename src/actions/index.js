@@ -13,10 +13,12 @@ export const getFolderCampaigns = (response) => ({
   response
 });
 
-export const getCampaignEmailActivity = (response, id) => ({
+export const getCampaignEmailActivity = (response, id, timeStamp, title) => ({
   type: 'GET_CAMPAIGN_EMAIL_ACTIVITY',
   response,
-  id
+  id,
+  timeStamp,
+  title
 });
 
 export const deleteActiveCampaign = (id) => ({

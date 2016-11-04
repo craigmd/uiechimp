@@ -1,5 +1,5 @@
 import isEqual from 'lodash/isEqual'
-
+// I don't think this part of state is well done, but computing opens and clicks on the fly elsewhere seems like it might be a performance issue
 const emailActivity = (state={}, action) => {
   let newState = {...state};
   let response = action.response;
