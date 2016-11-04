@@ -1,15 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Controller from '../../components/analyzer/Controller'
-import { updateFilterValue } from '../../actions'
+import { updateFilterValue, updateFilterOrientation } from '../../actions'
 
-const Filter = ({ filter, updateFilterValue }) => {
+const Filter = ({ filter, updateFilterValue, updateFilterOrientation }) => {
   return (
     <div className="filter">
       <div className="flex-between">
         <h2 className="filter-title">Campaigns Filter</h2>
         <div className="filter-direction-container">
-          <input className="below-input" type="checkbox" />
+          <input
+            className="below-input"
+            type="checkbox"
+            onChange={updateFilterOrientation}
+          />
           <span>below</span>
         </div>
       </div>
@@ -52,5 +56,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { updateFilterValue }
+  { updateFilterValue, updateFilterOrientation }
 )(Filter)

@@ -1,5 +1,5 @@
 import isEqual from 'lodash/isEqual'
-
+// I don't think this part of state is well done, but computing opens and clicks on the fly elsewhere seems like it might be a performance issue
 const emailActivity = (state={}, action) => {
   let newState = {...state};
   let response = action.response;
@@ -61,6 +61,13 @@ export default emailActivity
 
 export const getVisibleEmails = (state, filter) => {
   const emails = Object.entries(state);
+
+  if (filter.below) {
+    return emails.filter(email =>
+      email[1].opened < filter.opened &&
+      email[1].clicked < filter.clicked &&
+      email[1].unsubed >= filter.unsubed);
+  }
 
   return emails.filter(email =>
     email[1].opened >= filter.opened &&

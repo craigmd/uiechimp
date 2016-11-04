@@ -57,26 +57,38 @@
   line-height: 2.75;
 }
 
+.col-groups {
+  display: flex;
+  line-height: 1.5;
+
+   & div {
+    margin-right: 2px;
+    text-align: center;
+    min-width: 25px;
+  }
+}
+
 .email-address-header {
   background-color: white;
   border-right: 1px solid $pop-gray;
-  height: 50px;
   padding-left: 15px;
-  width: 300px;
+  width: 301px;
 }
 
 .campaigns-header {
-  height: 51px;
   padding-left: 15px;
-  width: 660px;
+  width: 659px;
 }
 
+.public_fixedDataTable_header,
 .public_fixedDataTableRow_main,
 .public_fixedDataTableCell_main,
 .public_fixedDataTableRow_highlighted,
 .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main
  {
   background-color: $component-bg;
+  background-image: none;
+  border: 0;
 }
 
 .public_fixedDataTableCell_main {
@@ -85,6 +97,15 @@
 
 .public_fixedDataTableCell_cellContent {
   padding: 0;
+}
+
+.header-cell {
+  background-color: $component-bg;
+  text-align: center;
+
+  &.first-col {
+    margin-left: 7px;
+  }
 }
 
 .email-address-cell {

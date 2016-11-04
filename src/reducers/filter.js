@@ -1,4 +1,7 @@
-const filter = (state={opened: 0, clicked: 0, unsubed: 0}, action) => {
+const filter = (
+  state={opened: 0, clicked: 0, unsubed: 0, below: false},
+  action
+) => {
   switch(action.type) {
     case 'UPDATE_FILTER_VALUE':
       let { name, updateValue, direction } = action;
@@ -12,6 +15,8 @@ const filter = (state={opened: 0, clicked: 0, unsubed: 0}, action) => {
       }
 
       return {...state, [name]: value};
+    case 'UPDATE_FILTER_ORIENTATION':
+      return {...state, below: !state.below}
     default:
       return state;
   }

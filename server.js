@@ -1,13 +1,14 @@
 require('dotenv').config();
 let express = require('express');
 let fetch = require('node-fetch');
+let bodyParser = require('body-parser');
+let path = require('path');
 
 let app = express();
 let url;
 const auth = "Basic " + new Buffer("apikey:" + process.env.MAILCHIMP_KEY)
   .toString("base64");
-const myInit = {
-  method: 'GET',
+let myInit = {
   headers: {
     "Content-Type": "application/json",
     "Authorization": auth
@@ -21,15 +22,29 @@ const fetcher = (endpoint, settings, response) => {
     .catch(error => console.log("Woops, ", error.message));
 };
 
-//routes
-app.get('/', (req, res) => {
-  res.send('Hello world!');
+//middlewares
+app.use('/api', bodyParser.json());
+app.use('/api', (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  next();
 });
+app.use(express.static(path.join(__dirname, "/dist")));
+
+//routes
 
 //mailchimp fetchers
 app.get('/api', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
   url = req.query.url;
+  myInit.method = 'GET'
+  fetcher(url, myInit, res);
+});
+
+app.post('/api', (req, res) => {
+  url = req.query.url;
+  myInit.method = 'POST';
+  myInit.body = JSON.stringify(req.body);
   fetcher(url, myInit, res);
 });
 

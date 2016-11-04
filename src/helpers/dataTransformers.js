@@ -12,9 +12,9 @@ export const emailActivityRawToStore = response => {
         unsubed: 0
       }
     });
-  }).reduce((prev, cur) =>
-    Object.assign(prev, cur)
-  );
+  }).reduce((prev, cur) => {
+    return Object.assign(prev, cur)
+  }, []);
 }
 
 export const emailUnsubRawToStore = response => {
@@ -28,7 +28,7 @@ export const emailUnsubRawToStore = response => {
         unsubed: 1
       }
     })
-  ).reduce((prev, cur) =>
-    Object.assign(prev, cur)
-  );
+  ).reduce((prev, cur) => {
+    return Object.assign(prev, cur)
+  }, []);
 }
