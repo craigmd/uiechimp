@@ -2,7 +2,7 @@ import fetcher from '../helpers/fetcher'
 
 export const fetchEmailUnsubs = (campaignId, transformer) => {
   const host = process.env.NODE_ENV === 'production' ?
-    '/api' : 'http://localhost:3000/api';
+    '/api' : 'http://localhost:4000/api';
   const url = encodeURIComponent(
     `https://us5.api.mailchimp.com/3.0/reports/${campaignId}/unsubscribed?&count=1000`
   );

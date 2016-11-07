@@ -7,7 +7,8 @@ import { emailActivityRawToStore, emailUnsubRawToStore } from '../../helpers/dat
 
 const Campaign = ({ id, dispatch, children, emailsSent, sentAt}) => {
   let activityURL;
-  const count=400;
+  const count = 400;
+  const host = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:4000/api'
   const setURL = (offset, subresource) => { return encodeURIComponent(
     `https://us5.api.mailchimp.com/3.0/reports/${id}/${subresource}?offset=${offset}&count=${count}`
   )};
@@ -29,7 +30,7 @@ const Campaign = ({ id, dispatch, children, emailsSent, sentAt}) => {
                 function* increaseOffset(offset = 0) {
                   while (offset < emailsSent) {
                     activityURL = setURL(offset, 'email-activity');
-                    fetcher(`http://localhost:3000/api?url=${activityURL}`,
+                    fetcher(`${host}?url=${activityURL}`,
                       myInit,
                       emailActivityRawToStore
                     ).then(body => dispatch(

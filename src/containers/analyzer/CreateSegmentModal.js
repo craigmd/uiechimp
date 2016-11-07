@@ -49,7 +49,7 @@ const CreateSegmentModal = ({ emailActivity, toggleMe }) => {
                 static_segment: emailAddresses
               })
             }
-            fetch(`http://localhost:3000/api?url=${url}`, myInit)
+            fetch(`http://localhost:4000/api?url=${url}`, myInit)
               .then(response => response.json())
               .then(body => console.log('response body: ', body))
               .catch(error => console.error('Woops, ', error.message));

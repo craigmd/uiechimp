@@ -32,12 +32,9 @@ app.use('/api', (req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
   next();
 });
-app.use(express.static(path.join(__dirname, "/dist")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 //routes
-app.get('/', (req, res) => {
-  res.render('index', {path: path.join(__dirname, "dist")});
-})
 
 //mailchimp fetchers
 app.get('/api', (req, res) => {
