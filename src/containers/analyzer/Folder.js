@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import fetcher from '../../helpers/fetcher'
+import { fetchCampaigns } from '../../api'
 import { getFolderCampaigns, setActiveFolder } from '../../actions'
 
 const Folder = ({ isActive, dispatch, id, endpoint, children }) => {
   let classes = 'folder';
-  const url = encodeURIComponent(endpoint + '&count=999');
-  const myInit = { method: 'GET' };
+  const url = encodeURIComponent(endpoint + '&count=1000');
 
   if (isActive == id) {
     classes = classes + ' folder--active';
@@ -16,8 +15,8 @@ const Folder = ({ isActive, dispatch, id, endpoint, children }) => {
       className={classes}
       onClick={() => {
         dispatch(setActiveFolder(id));
-        fetcher(`http://localhost:3000/api?url=${url}`, myInit).then(body =>
-          dispatch(getFolderCampaigns(body.campaigns))
+        fetchCampaigns(url).then(body =>
+           dispatch(getFolderCampaigns(body.campaigns))
         );
       }}
     >{children}</li>

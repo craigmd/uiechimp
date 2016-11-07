@@ -1,16 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Folder from './Folder'
-import fetcher from '../../helpers/fetcher'
+import { fetchFolders } from '../../api'
 import { getFolders } from '../../actions'
 
 class Folders extends React.Component {
   componentDidMount() {
-    const url = 'https://us5.api.mailchimp.com/3.0/campaign-folders?count=1000';
-    const myInit = { method: 'GET' };
-
-    fetcher(`http://localhost:3000/api?url=${url}`, myInit)
-      .then(body => this.props.getFolders(body.folders));
+    fetchFolders().then(body => this.props.getFolders(body.folders));
   }
 
   render() {
