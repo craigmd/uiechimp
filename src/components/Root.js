@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 
 //Components
 import Layout from './Layout'
-import Analyzer from './analyzer'
+import Analyzer from './Analyzer'
 
 const Root = ({ store }) => {
   return (
