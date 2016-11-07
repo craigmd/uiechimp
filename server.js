@@ -1,3 +1,5 @@
+'use-strict'
+
 require('dotenv').config();
 let express = require('express');
 let fetch = require('node-fetch');
@@ -48,4 +50,4 @@ app.post('/api', (req, res) => {
   fetcher(url, myInit, res);
 });
 
-app.listen(3000, () => console.log('The server is listening on port 3000'));
+app.listen(4000, () => console.log('The server is listening on port 4000'));
