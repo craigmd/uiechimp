@@ -64,8 +64,8 @@ export const getVisibleEmails = (state, filter) => {
 
   if (filter.below) {
     return emails.filter(email =>
-      email[1].opened < filter.opened &&
-      email[1].clicked < filter.clicked &&
+      email[1].opened <= filter.opened &&
+      email[1].clicked <= filter.clicked &&
       email[1].unsubed >= filter.unsubed);
   }
 

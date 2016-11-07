@@ -5,7 +5,7 @@ import Campaign from './Campaign'
 const Campaigns  = ({ campaigns }) => {
   const campaignList = campaigns.map(campaign => {
     let { id, settings, emails_sent: emailsSent, send_time: sentAt } = campaign;
-    
+
     return (
       <Campaign
         key={id}
@@ -13,7 +13,6 @@ const Campaigns  = ({ campaigns }) => {
         emailsSent={emailsSent}
         sentAt={sentAt}
         title={settings.title}
-        count={300}
       >{settings.title}</Campaign>
     );
   });
