@@ -1,5 +1,5 @@
 import isEqual from 'lodash/isEqual'
-// I don't think this part of state is well done, but computing opens and clicks on the fly elsewhere seems like it might be a performance issue
+// I don't think this part of state is well done, but computing opens and clicks on the fly elsewhere seems like it might be a performance issue. An example of the state structure is at the bottom.
 const emailActivity = (state={}, action) => {
   let newState = {...state};
   let response = action.response;
@@ -74,3 +74,23 @@ export const getVisibleEmails = (state, filter) => {
     email[1].clicked >= filter.clicked &&
     email[1].unsubed >= filter.unsubed);
 }
+
+
+// state = {
+//   "email@address.com": {
+//     campaignId1: ["click", "open"],
+//     campaignid2: ["open"]
+//     clicked: 1,
+//     opened: 2,
+//     unsub: 0
+//   },
+//   "foo@address.com": {
+//     campaignId1: ["open", "unsub"],
+//     clicked: 0,
+//     opened: 1,
+//     unsub: 1
+//   },
+//   .
+//   .
+//   .
+// }
