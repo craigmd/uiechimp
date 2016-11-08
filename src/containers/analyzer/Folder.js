@@ -5,17 +5,17 @@ import { getFolderCampaigns, setActiveFolder } from '../../actions'
 
 const Folder = ({ isActive, dispatch, id, endpoint, children }) => {
   let classes = 'folder';
-  const url = encodeURIComponent(endpoint + '&count=1000');
 
   if (isActive == id) {
     classes = classes + ' folder--active';
   }
+
   return (
     <li
       className={classes}
       onClick={() => {
         dispatch(setActiveFolder(id));
-        fetchCampaigns(url).then(body =>
+        fetchCampaigns(endpoint).then(body =>
            dispatch(getFolderCampaigns(body.campaigns))
         );
       }}

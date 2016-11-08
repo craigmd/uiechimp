@@ -34,7 +34,6 @@ const EmailsTable = ({ emails, activeCampaigns }) => {
 
         return (
           <Column
-            header={<Cell data-tip="I'm a col!" className="header-cell">{index+1}</Cell>}
             key={campaign[0]}
             cell={<CampaignCell data={emails} col={campaign[0]} first={false} />}
             width={27}

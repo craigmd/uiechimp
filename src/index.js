@@ -18,15 +18,3 @@ render(
   <Root store={store} />,
   document.getElementById('root')
 );
-
-// let state = {
-//   foo: {aycl1: [1,2,3], aycl2: [4,5,6]},
-//   bar: {aycl1: [4,5,6]}
-// }
-//
-// for (const prop in state) {
-//   if (prop === "foo") {
-//     delete state[prop]["aycl2"];
-//   }
-//   console.log("state after: ", state);
-// }

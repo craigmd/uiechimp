@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getVisibleEmails } from '../../reducers'
-import 'whatwg-fetch'
+import { fetchList } from '../../api'
 
 const CreateSegmentModal = ({ emailActivity, toggleMe }) => {
   const emailAddresses = emailActivity.map(activity => activity[0]);
@@ -37,23 +37,12 @@ const CreateSegmentModal = ({ emailActivity, toggleMe }) => {
           onClick={() => {
             const segmentNameInput = document.getElementById('segment-name');
             const listIdInput = document.getElementById('list-id');
-            const url=`https://us5.api.mailchimp.com/3.0/lists/${listIdInput.value}/segments`;
-            const myInit = {
-              method: 'POST',
-              headers: new Headers({
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              }),
-              body: JSON.stringify({
-                name: segmentNameInput.value,
-                static_segment: emailAddresses
-              })
-            }
-            fetch(`http://localhost:4000/api?url=${url}`, myInit)
+
+            fetchList(listIdInput.value, segmentNameInput.value, emailAddresses)
               .then(response => response.json())
               .then(body => console.log('response body: ', body))
               .catch(error => console.error('Woops, ', error.message));
-              
+
             toggleMe();
           }}
         >Create Segment</button>

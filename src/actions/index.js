@@ -3,7 +3,7 @@ export const getFolders = (response) => ({
   response
 });
 
-export const setActiveFolder = (id) => ({
+export const setActiveFolder = id => ({
   type: 'SET_ACTIVE_FOLDER',
   id
 });
@@ -21,7 +21,7 @@ export const getCampaignEmailActivity = (response, id, timeStamp, title) => ({
   title
 });
 
-export const deleteActiveCampaign = (id) => ({
+export const deleteActiveCampaign = id => ({
   type: 'DELETE_ACTIVE_CAMPAIGN',
   id
 });

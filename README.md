@@ -6,10 +6,12 @@ UIE Chimp is an email marketing tool using the Mail Chimp API designed to allow 
 
 These issues are yet to be resolved:
    - Race conditions exist throughout the app.  UIE Chimp processes data asynchronously and it should be noted that while certain operations, such as filtering of records, can be executed while data is still loading, others, such as delete operations, should be avoided until all your data has been processed.
-   - There is no caching. If you have been pulling large amounts of data for the last hour and the browser is refreshed for closed for some reason, that data will be lost.
+   - There is no caching. If you have been pulling large amounts of data for the last hour and the browser is refreshed for closed or some reason, that data will be lost.
    - The app is not fault tolerant.  If the Mail Chimp API is down then expect the app to throw an error, but there will be no indication of this to the user. If you notice unusual behavior then check the status of the API on Mail Chimp's site.
    - There is no primary indicator as to when the app has finished pulling and processing the data, although there are many ancillary indicators the user can monitor to judge if the pull has been completed, such as email count and reordering of records upon entry into the table. If these things haven't happened for quite some time (usually one minute) then it is likely safe to delete records or create a list.
+   - If the user checks campaigns and then navigates to another folder, then comes back to the original folder, then none of the original campaigns stay checked and therefore cannot be deleted.
    - The "clear" function for Campaigns currently does not work.
+   - It could use a sweet logo.
 
 ##Using The App
 
@@ -35,8 +37,8 @@ Once the user is finished filtering the addresses he/she is not interested in, t
 
 Addresses can take more than one action on a email, but some actions override others in terms of what color is displayed in the action box for that column.  The follow shows the action hierarchy:
 
-  1. Unsubscribe
-  2. Bounce
+  1. Bounce
+  2. Unsubscribe
   3. Click
   4. Open
   5. No Action
@@ -45,4 +47,24 @@ For example, if someone unsubscribed, clicked, and opened, then their action box
 
 ##Technologies
 
+ - [React](https://facebook.github.io/react/docs/hello-world.html)
+ - [Redux](http://redux.js.org/)
+ - [React/Redux Bindings](https://github.com/reactjs/react-redux/blob/master/README.md)
+ - [Webpack](https://webpack.github.io/docs/)
+ - [Babel](https://babeljs.io/)
+ - [Fixed Data Table](https://facebook.github.io/fixed-data-table/) as [Fixed Data Table 2](https://github.com/schrodinger/fixed-data-table-2)
+ - [Expressjs](http://expressjs.com/en/api.html)
+ - []
+
 The app is designed as an SPA with React/Redux.  It uses a very simple nodejs server with Expressjs.  If you are looking to make improvements to the app then you should be familiar with those technologies.  Things may not be perfect, but neither is the person who wrote it ;). If you decide you want to dev on it, use a webpack-dev-server and call the backend using fetch api with endpoint localhost:4000.  Then the server will talk to Mail Chimp.  Any of the issues listed in the [Pitfalls](#pitfalls) section would be good projects to improve the app.
+
+This app uses Mail Chimp API v3.0 with the following endpoints:
+
+  1. Campaign Folders (Read)
+  2. Campaigns (Read)
+  3. Lists (Write)
+  4. Reports
+    - Email Activity (Read)
+    - Unsubscribes (Read)
+
+For more information on what fields are pulled and more endpoints visit the [Mail Chimp API Docs](https://developer.mailchimp.com/), or see the [sample_data](../../tree/master/src/sample_data) provided in the repo.

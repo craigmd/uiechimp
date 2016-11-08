@@ -2,7 +2,7 @@ export const folders = {
 	"folders": [
 		{
 			"name": "AYCL",
-			"id": "folder1",
+			"id": "xxxxxxxxx",
 			"count": 122,
 			"_links": [
 				{
@@ -14,19 +14,19 @@ export const folders = {
 				},
 				{
 					"rel": "self",
-					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/7d8ae415d2",
+					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/xxxxxxxxx",
 					"method": "GET",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/CampaignFolders/Instance.json"
 				},
 				{
 					"rel": "update",
-					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/7d8ae415d2",
+					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/xxxxxxxxx",
 					"method": "PATCH",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/CampaignFolders/Instance.json"
 				},
 				{
 					"rel": "delete",
-					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/7d8ae415d2",
+					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/xxxxxxxxx",
 					"method": "DELETE",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/CampaignFolders/Instance.json"
 				},
@@ -40,7 +40,7 @@ export const folders = {
 		},
 		{
 			"name": "AYCL2",
-			"id": "folder2",
+			"id": "xxxxxxxxx",
 			"count": 122,
 			"_links": [
 				{
@@ -52,19 +52,19 @@ export const folders = {
 				},
 				{
 					"rel": "self",
-					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/7d8ae415d2",
+					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/xxxxxxxxx",
 					"method": "GET",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/CampaignFolders/Instance.json"
 				},
 				{
 					"rel": "update",
-					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/7d8ae415d2",
+					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/xxxxxxxxx",
 					"method": "PATCH",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/CampaignFolders/Instance.json"
 				},
 				{
 					"rel": "delete",
-					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/7d8ae415d2",
+					"href": "https://us5.api.mailchimp.com/3.0/campaign-folders/xxxxxxxxx",
 					"method": "DELETE",
 					"targetSchema": "https://us5.api.mailchimp.com/schema/3.0/CampaignFolders/Instance.json"
 				},

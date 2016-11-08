@@ -7,12 +7,12 @@ const emailActivity = (state={}, action) => {
 
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
-      for (const email in response) {
-        if (newState.hasOwnProperty(email)) {
+      for (const email in response) { //Loop through the existing state
+        if (newState.hasOwnProperty(email)) { //Check for email addresses in state that are also in response
           if (isEqual(newState[email], response[email])) { //duplicates
             continue;
           }
-
+          //assign the new campaignId as a property to the object held by the email address, add clicks and unsubs to the existing totals. Since the id associated with the campaign might also already be in state we know we should just concat them, otherwise we need to add it to the state. This happens because 'unsubs' and 'email-activity' carry the same id from different api endpoints.
           Object.assign(
             newState[email], {
               [id]: newState[email][id] ?
@@ -25,7 +25,7 @@ const emailActivity = (state={}, action) => {
           );
         }
       }
-
+      //For those emails not already in state, assign the updated state to the response to get the entire list
       return Object.assign(response, newState);
     case 'DELETE_ACTIVE_CAMPAIGN':
       for (const email in newState) {

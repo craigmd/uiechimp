@@ -3,9 +3,8 @@ const activeCampaigns = (state=new Map(), action) => {
 
   switch(action.type) {
     case 'GET_CAMPAIGN_EMAIL_ACTIVITY':
-      const timeStamp = new Date(action.timeStamp);
       return new Map(state.entries())
-        .set(action.id, {timeStamp: timeStamp, title: action.title});
+        .set(action.id, {timeStamp: action.timeStamp, title: action.title});
     case 'DELETE_ACTIVE_CAMPAIGN':
       newState.delete(action.id);
       return newState;

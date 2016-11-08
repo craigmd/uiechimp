@@ -12,6 +12,7 @@ class Folders extends React.Component {
   render() {
     const folders = this.props.folders.map(folder => {
       let { name, _links: links, id } = folder;
+      //the endpoint for the campaigns comes directly from Mail Chimp
       return (
         <Folder
           key={id}

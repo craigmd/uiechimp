@@ -1,10 +1,10 @@
 'use-strict'
 
 require('dotenv').config();
-let express = require('express');
-let fetch = require('node-fetch');
-let bodyParser = require('body-parser');
-let path = require('path');
+const express = require('express');
+const fetch = require('node-fetch');
+const bodyParser = require('body-parser');
+const path = require('path');
 
 let app = express();
 let url;
@@ -26,12 +26,14 @@ const fetcher = (endpoint, settings, response) => {
 
 //middlewares
 app.use('/api', bodyParser.json());
-app.use('/api', (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:8080");
-  res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
-  next();
-});
+if (process.env.NODE_ENV === 'development') {
+  app.use('/api', (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+    res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+    next();
+  });
+}
 app.use(express.static(path.join(__dirname, "dist")));
 
 //routes
