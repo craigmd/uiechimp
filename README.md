@@ -54,7 +54,6 @@ For example, if someone unsubscribed, clicked, and opened, then their action box
  - [Babel](https://babeljs.io/)
  - [Fixed Data Table](https://facebook.github.io/fixed-data-table/) as [Fixed Data Table 2](https://github.com/schrodinger/fixed-data-table-2)
  - [Expressjs](http://expressjs.com/en/api.html)
- - []
 
 The app is designed as an SPA with React/Redux.  It uses a very simple nodejs server with Expressjs.  If you are looking to make improvements to the app then you should be familiar with those technologies.  Things may not be perfect, but neither is the person who wrote it ;). If you decide you want to dev on it, use a webpack-dev-server and call the backend using fetch api with endpoint localhost:4000.  Then the server will talk to Mail Chimp.  Any of the issues listed in the [Pitfalls](#pitfalls) section would be good projects to improve the app.
 
