@@ -67,3 +67,8 @@ This app uses Mail Chimp API v3.0 with the following endpoints:
     - Unsubscribes (Read)
 
 For more information on what fields are pulled and more endpoints visit the [Mail Chimp API Docs](https://developer.mailchimp.com/), or see the [sample_data](../../tree/master/src/sample_data) provided in the repo.
+
+###Deploying
+
+npm run production
+pm2 start /home/tools/uiechimp/server.js --name="uiechimp"
