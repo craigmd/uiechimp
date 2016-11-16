@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
+import { host } from './settings'
 
 const fetchList = (listId, segmentName, emailAddresses) => {
-  const host = 'http://localhost:4000/api'
   const url=`https://us5.api.mailchimp.com/3.0/lists/${listId}/segments`;
   const myInit = {
     method: 'POST',
@@ -13,7 +13,7 @@ const fetchList = (listId, segmentName, emailAddresses) => {
       name: segmentName,
       static_segment: emailAddresses
     })
-  }
+  };
 
   return fetch(`${host}?url=${url}`, myInit);
 }
