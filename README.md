@@ -2,6 +2,8 @@
 
 UIE Chimp is an email marketing tool using the Mail Chimp API designed to allow for segmentation of lists based on Open, Click, and Unsubscribe behaviors.
 
+![uiechimp homepage](uiechimp-comp.jpg)
+
 ##<a name="pitfalls"></a>Pitfalls
 
 These issues are yet to be resolved:
